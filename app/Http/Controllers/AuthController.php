@@ -21,7 +21,7 @@ class AuthController extends Controller
         $this->validate($request, [
             'nom' => 'required',
             'prenom' => 'required',
-            'mail' => 'email|required|unique:utilisateurs',
+            'email' => 'email|required|unique:utilisateurs',
             'tel' => 'required|min:12',
             'prof' => 'required',
             'adresse' => 'required',
@@ -30,7 +30,7 @@ class AuthController extends Controller
         $utilisateur = new Utilisateur();
         $utilisateur->nom = $request->input('nom');
         $utilisateur->prenom = $request->input('prenom');
-        $utilisateur->mail = $request->input('mail');
+        $utilisateur->email = $request->input('email');
         $utilisateur->tel = $request->input('tel');
         $utilisateur->prof = $request->input('prof');
         $utilisateur->adresse = $request->input('adresse');
